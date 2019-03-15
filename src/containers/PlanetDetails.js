@@ -5,22 +5,20 @@ import { getSelectedplanet, clearPlanet } from '../actions';
 import { Link } from 'react-router-dom';
 
 
-const showDetails =(title, value) =>{
+const showDetails = (title, value) => {
     return (
-       
-       <div className='row'>
-                            <label className='col-sm-4 col-form-label'>{title}</label>
-                            <div className='col-sm-8'>
-                                <div className='form-control-plaintext'>
-                                    {value}
-                                </div>
-                            </div>
-                        </div>
+        <div className='row'>
+            <label className='col-sm-4 col-form-label'>{title}</label>
+            <div className='col-sm-8'>
+                <div className='form-control-plaintext'>
+                    {value}
+                </div>
+            </div>
+        </div>
     )
 }
 
 class PlanetDetails extends Component {
-
     componentDidMount() {
         this.props.getSelectedplanet(this.props.match.params.id);
     }
@@ -28,8 +26,6 @@ class PlanetDetails extends Component {
     componentWillUnmount() {
         this.props.clearPlanet();
     }
-
-   
 
     renderPlanets = ({ selected }) => {
         if (selected) {
@@ -39,15 +35,15 @@ class PlanetDetails extends Component {
                         <h3>{item.name}</h3>
                         {/*orbital_period*/}
                         {showDetails("Orbital period", item.orbital_period)}
-                       
+
                         {/*population*/}
                         {showDetails("Population", item.population)}
-                        
+
                         {/*diameter*/}
                         {showDetails("Diameter", item.diameter)}
-                                               
-                         {/*gravity*/}
-                         {showDetails("Gravity", item.gravity)}
+
+                        {/*gravity*/}
+                        {showDetails("Gravity", item.gravity)}
                     </div>
                 )
             })
@@ -59,7 +55,7 @@ class PlanetDetails extends Component {
             <div className='card-planet-details'>
                 <div className="pagination-btns mb-2 text-right">
                     <div className="btn-group">
-                        <Link  to={`/#`} className="btn btn-secondary">Back</Link>
+                        <Link to={'/#'} className="btn btn-secondary">Back</Link>
                     </div>
                 </div>
                 <div className='card'>
