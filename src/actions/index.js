@@ -1,4 +1,4 @@
-const GIT_URL = 'https://swapi.co/api/planets/'
+const GIT_URL = 'https://swapi.dev/api/planets/'
 
 
 export function getallPlanets(page = GIT_URL) {

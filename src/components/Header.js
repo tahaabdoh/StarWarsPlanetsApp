@@ -11,7 +11,7 @@ const Header = () => {
                 </Link>
                 <h4 className="title">Planets </h4>
                 <div className="desc">
-                    Reactjs application using swapi.co
+                    Reactjs application using swapi.dev
                 </div>
             </div>
         </Col>
